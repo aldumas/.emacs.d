@@ -1,6 +1,7 @@
 ;; General settings
 (setq inhibit-startup-message t)
 (column-number-mode 1) ; display column number in mode line
+(setq-default buffer-file-coding-system 'iso-latin-1-unix)
 
 
 ;; Set up backup file / auto-save setting
