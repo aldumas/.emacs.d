@@ -11,8 +11,6 @@
       kept-new-versions 6
       kept-old-versions 2
       version-control t) ; use versioned backups
-(setq auto-save-file-name-transforms
-      `(("." "~/.emacs.d/saves/" t)))
 (setq create-lock-files nil)
 
 
