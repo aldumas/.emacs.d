@@ -3,6 +3,29 @@
 (column-number-mode 1) ; display column number in mode line
 (setq-default buffer-file-coding-system 'iso-latin-1-unix)
 
+; Set new frame appearance
+(if (display-graphic-p)
+    (progn
+      (setq initial-frame-alist
+            '(
+              (tool-bar-lines . 0)
+              (width . 109) ; chars
+              (height . 45) ; lines
+              (background-color . "honeydew")
+              (left . 50)
+              (top . 50)))
+      (setq default-frame-alist
+            '(
+              (tool-bar-lines . 0)
+              (width . 109)
+              (height . 45)
+              (background-color . "honeydew")
+              (left . 50)
+              (top . 50))))
+  (progn
+    (setq initial-frame-alist '( (tool-bar-lines . 0)))
+    (setq default-frame-alist '( (tool-bar-lines . 0)))))
+
 
 ;; Set up backup file / auto-save setting
 (setq backup-by-copying t ; don't clobber symlinks
