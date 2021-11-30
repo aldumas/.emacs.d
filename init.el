@@ -3,7 +3,7 @@
 (column-number-mode 1) ; display column number in mode line
 (setq-default buffer-file-coding-system 'iso-latin-1-unix)
 
-; Set new frame appearance
+; Set new frame appearance to provide space for neotree
 (if (display-graphic-p)
     (progn
       (setq initial-frame-alist
@@ -40,17 +40,18 @@
 ;; Org mode settings
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+;; Packages
 
-;; Configure packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (neotree lua-mode sqlformat php-mode magit))))
+ '(package-selected-packages (quote (magit neotree use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -58,6 +59,12 @@
  ;; If there is more than one, they won't work right.
  )
 
+(eval-when-compile
+  (require 'use-package))
 
-;; Neotree settings
-(global-set-key [f8] 'neotree-toggle)
+(use-package neotree
+  :bind ([f8] . neotree-toggle)
+  :ensure t)
+
+(use-package magit
+  :ensure t)
