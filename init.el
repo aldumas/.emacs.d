@@ -66,9 +66,11 @@
 (use-package magit
   :ensure t)
 
+; evil-mode dependency
 (use-package undo-fu
   :ensure t)
 
+; evil-mode dependency
 (use-package goto-chg
   :ensure t)
 
