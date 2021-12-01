@@ -72,3 +72,8 @@
 
 (use-package magit
   :ensure t)
+
+(use-package evil
+  :config
+  (evil-mode 1)
+  :ensure t)
