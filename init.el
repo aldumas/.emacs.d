@@ -66,6 +66,12 @@
 (use-package magit
   :ensure t)
 
+(use-package undo-fu
+  :ensure t)
+
+(use-package goto-chg
+  :ensure t)
+
 (use-package evil
   :config
   (evil-mode 1)
