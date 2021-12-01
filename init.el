@@ -54,7 +54,7 @@
   (require 'use-package))
 
 (use-package helm
-  :ensure t)
+  :straight t)
 
 (use-package projectile
   :ensure t)
